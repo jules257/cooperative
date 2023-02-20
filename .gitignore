@@ -1,1 +1,4 @@
-venv
+venv/
+app/__pycache__/
+app/migrations/__pycache__/
+cooperative/__pycache__/
