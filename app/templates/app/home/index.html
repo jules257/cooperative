@@ -1,0 +1,338 @@
+{% extends 'app/layouts/default.html' %}
+
+{% block content %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Info boxes -->
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+             
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Membres</span>
+                <span class="info-box-number">
+                 
+                <input type="text" name="" id="total_membres" value=" " hidden>
+                  <small></small>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-shopping-cart"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"> <a href="">cooperatives</a></span>
+                <span class="info-box-number">
+                  
+                  <input type="text" name="" id="total_cooperatives" value="" hidden>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <!-- fix for small devices only -->
+          <div class="clearfix hidden-md-up"></div>
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-address-book"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"><a href=""> Categories</a></span>
+                <span class="info-box-number">
+                 
+                </span>
+                <h3><input type="text" name="" id="total_categories" value="" hidden></h3>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"><a href="">Members actifs</a></span>
+                <span class="info-box-number">
+                 
+                </span>
+                  <input type="text"  id="total_etat_membres" value="" hidden>
+              
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text"><a href="">Members non actifs</a></span>
+                <span class="info-box-number">
+                  
+                  <input type="text" name="" id="total_not_etat_membres"  value="" hidden>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-primary  elevation-1"><i class="fas fa-credit-card"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">total credit </span>
+                <span class="info-box-number">
+                  
+                  <input type="text" name="" id="total_credits"  value="" hidden>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger  elevation-1"><i class="fas fa-credit-card"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">total credit + taux</span>
+                <span class="info-box-number">
+                  fbu
+                  <input type="text" name="" id="total_remboursement"  value="" hidden>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+
+
+          <div class="col-12 col-sm-6 col-md-3">
+           <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-piggy-bank"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">cotisations(Epargne)</span>
+                <span class="info-box-number">
+                  fbu
+                  <input type="text" name="" id="total_motif_epargne"  value="" hidden>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-piggy-bank"></i></span>
+ 
+               <div class="info-box-content">
+                 <span class="info-box-text">cotisations(Sociale)</span>
+                 <span class="info-box-number">
+                   fbu
+                   <input type="text" name="" id="total_motif_sociale"  value="" hidden>
+                 </span>
+               </div>
+               <!-- /.info-box-content -->
+
+         </div>
+             <!-- /.info-box -->
+           </div>
+
+
+           <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger  elevation-1"><i class="fas fa-credit-card"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">remboursements</span>
+                <span class="info-box-number">
+                  fbu
+                  <input type="text" name="" id="total_re"  value="" hidden>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+
+         
+
+
+        </div>
+        <!-- /.row -->
+
+        
+<div class="row">
+  <!-- graphique -->
+  <!-- <div class="col-md-6">
+   
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    
+      var actif = document.getElementById('total_etat_membres').value;
+      var notactif = document.getElementById('total_not_etat_membres').value;
+      var membres = document.getElementById('total_membres').value;
+      var categories = document.getElementById('total_categories').value;
+      var cooperatives = document.getElementById('total_cooperatives').value;
+
+      -->
+
+
+
+
+
+     
+<!-- 
+
+      const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ['membres actif', 'membres non actif', 'membres', 'categories', 'cooperatives'],
+datasets: [{
+label: '# of Membres',
+data: [actif, notactif, membres, categories,cooperatives,5],
+backgroundColor: [
+"rgba(255,99, 132, 0.2)",
+"rgba(54,162, 235, 0.2)",
+"rgba(255,206, 86, 0.2)",
+"rgba(75,192, 192, 0.2)",
+"rgba(153,102, 255, 0.2)",
+"rgba(255,159, 64, 0.2)",
+],
+borderColor:[
+"rgba(255,99, 132, 1)",
+"rgba(54,162, 235, 1)",
+"rgba(255,206, 86, 1)",
+"rgba(75,192, 192, 1)",
+"rgba(153,102, 255, 1)",
+"rgba(255,159, 64, 1)",
+
+],
+borderwidth: 1
+}]
+},
+options: {
+scales: {
+y: {
+beginAtZero: true
+}
+}
+}
+});
+    </script> -->
+<!-- col md 8 -->
+  </div>
+  <!-- graphique 2-->
+  <!-- <div class="col-md-6">
+   
+    <div>
+      <canvas id="Chart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      
+      
+      var totalcredits = document.getElementById('total_credits').value;
+      var totalremboursements = document.getElementById('total_remboursement').value;
+      var epargne = document.getElementById('total_motif_epargne').value;
+      var sociale = document.getElementById('total_motif_sociale').value;
+      var remboursement = document.getElementById('total_re').value; -->
+
+      
+
+      
+
+
+
+
+<!-- 
+      const config = document.getElementById('Chart');
+    
+      new Chart(config, {
+        type: 'doughnut',
+        data: {
+          labels: ['total credits', 'total credit+taux', 'cotisation(Epargne)', 'cotisation(Sociale)', 'remboursements', 'Orange'],
+          datasets: [{
+            label: '# of Votes',
+            data: [totalcredits, totalremboursements, epargne, sociale, remboursement, 3],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script> -->
+<!-- col md 8 -->
+  </div>
+
+
+
+ 
+  <!-- row -->
+  </div>
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+   
+  </div>
+  <!-- /.content-wrapper -->
+  {% endblock %}

@@ -2,3 +2,4 @@ venv/
 app/__pycache__/
 app/migrations/__pycache__/
 cooperative/__pycache__/
+app/views/__pycache__/
