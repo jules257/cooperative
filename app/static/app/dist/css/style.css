@@ -1,0 +1,35 @@
+.swal-modal {
+    background-color: rgba(0, 0, 0, 651);
+    color: #fff;
+}
+
+.swal-title {
+    color: #fff;
+    font-size: 20px;
+
+}
+.swal-text {
+    color: #fff;
+    font-size: 15px;
+}
+.swal-button {
+    padding: 7px 19px;
+    border-radius: 5px;
+    background-color: #198754;
+    font-size: 12px;
+    border: 1px solid #198754;
+}
+.swal-button:not([disabled]):hover{
+    background: transparent;
+    color: #fff;
+    border: 1px solid #198754;
+}
+/* icon */
+.swal-icon--success__hide-corners {
+    background: none !important;
+}
+.swal-icon--success:before,
+.swal-icon--success:after {
+    background: none !important;
+
+}
