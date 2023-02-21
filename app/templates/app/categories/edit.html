@@ -1,0 +1,16 @@
+{% extends 'app/categories/create.html' %}
+<!-- modal-id -->
+{% block modal-id %} id="modal-edit{{categorie.pk}}" {% endblock modal-id %}
+<!-- form action -->
+{% block action %} action="{% url 'categories_update' %}" {% endblock action %}
+<!-- bouton action -->
+{% block btn-action %}<i class="ace-icon fa fa-check">update</i>{% endblock btn-action %}
+<!-- all input -->
+{% block value-id %}
+<input type="" name="id" id="id" class="form-control" value="{{ categorie.id }}" readonly>
+
+{% endblock value-id %}
+<!-- nom categorie  -->
+{% block value-nom_categorie %}
+value="{{ categorie.nom_categorie }}"
+{% endblock value-nom_categorie %}
