@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-
-from app.views import home,categories
+from app.views import home,categories,users
 
 
 
@@ -14,6 +13,14 @@ urlpatterns = [
     path('categories/delete/<int:id>',categories.delete, name='categories_delete'),
     path('categories/update',categories.update, name='categories_update'),
     path('categories/edit/<int:id>',categories.edit, name='categories_edit'),
+    
+    
+    
+    path('users/', users.index, name='users_index'),
+    path('login/', users.user_login, name='users_login'),
+    path('register/', users.register, name='users_register'),
+    path('users/store', users.store, name='users_store'),
+    path('logout/', users.user_logout, name='logout'),
     
    
     
