@@ -1,0 +1,139 @@
+{% extends 'app/layouts/default.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">users</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">cooperative</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+
+
+
+
+    <!-- <div class="card"> -->
+        <div class="card-header">
+            <button type="button" class="btn btn-info" onclick="reset()" data-toggle="modal"
+                data-target="#modal-create">
+                <span class="fas fa-plus"></span>
+            </button>
+          
+
+
+
+
+        </div>
+        <!-- /.card-header -->
+
+        <div class="card-body">
+            <table id="table" class="table table-bordered table-hover ">
+            <style>
+
+            </style>
+            <thead>
+                <tr>
+            <th>Id</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th> Email </th>
+              <th> Username </th>
+              
+
+
+
+
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.username }}</td>
+
+
+
+
+
+
+                    <td>
+                        <a href="" class="link-edit mr-2 text-primary" data-toggle="modal"
+                            data-target="#modal-edit">
+
+
+
+                            <span class="fas fa-edit"></span>
+
+                        </a>
+                        <a class="link-edit mr-2 text-danger" onclick="return confirm('do you want to delete!!' )"
+                            href="">
+                            <span class="fas fa-trash"></span>
+
+                        </a>
+                    </td>
+                   
+
+                </tr>
+                <!-- include modal edit -->
+                
+
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+      
+    </div>
+    <!-- /.card-body -->
+
+</div>
+<!-- /.card -->
+
+
+
+
+
+
+{% for message in messages %}
+
+{% if message.tags == 'success' %}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    var m = "{{ message }}";
+    swal("perfect !", m, "success")
+</script>
+{% endif %}
+{% endfor %}
+
+
+
+<!-- fin content-wrapp -->
+</div>
+
+
+
+
+
+
+
+{% endblock %}
