@@ -1,0 +1,40 @@
+<!--debut de formulaire pour ajouter categorie -->
+
+<div class="modal fade " {% block modal-id %} id="modal-create" {% endblock modal-id %} tabindex="-1"
+    aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form {% block action %} action="{% url 'categories_store' %}" {% endblock action %} id="form-create"
+                method="POST" class="col-xs-5" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <!-- block Id -->
+                    {% block value-id %}{% endblock value-id %}
+
+
+                    <div class="form-group validate">
+                        <label for="categorie">categorie:</label>
+                        <input type="text" name="nom_categorie" id="nom_categorie" class="form-control" required {% block value-nom_categorie %}{% endblock value-nom_categorie %}>
+                        <small class="text-red text-muted mySpan "></small>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-sm btn-secondary" data-dismiss="modal">
+                            <i class="ace-icon fa fa-times"></i>
+                            Cancel
+                        </button>
+
+                        <button class="btn btn-sm btn-primary">
+                            {% block btn-action %}<i class="ace-icon fa fa-check">save</i>{% endblock btn-action %}
+
+                        </button>
+
+
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
