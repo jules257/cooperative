@@ -1,0 +1,87 @@
+<!--debut de formulaire pour ajouter categorie -->
+{% load crispy_forms_tags %}
+<div class="modal fade " {% block modal-id %} id="modal-create" {% endblock modal-id %} tabindex="-1"
+    aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form {% block action %} action="{% url 'cooperatives_store' %}" {% endblock action %} id="form-create"
+                method="POST" class="col-xs-5" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                    <!-- block Id -->
+                    {% block value-id %}{% endblock value-id %}
+
+
+                    <div class="form-group validate">
+                        <label for="">nom cooperative:</label>
+                        <input type="text" name="nom_cooperative" id="nom_cooperative" class="form-control" required {% block value-nom_cooperative %}{% endblock value-nom_cooperative %}>
+                        <small class="text-red text-muted mySpan "></small>
+                    </div>
+
+                    <div class="form-group validate">
+                        <label for="">adresse:</label>
+                        <input type="text" name="adresse" id="adresse" class="form-control" required {% block value-adresse %}{% endblock value-adresse %}>
+                        <small class="text-red text-muted mySpan "></small>
+                    </div>
+
+                   
+                    <!-- col md -->
+                </div>
+
+
+
+                <div class="col-md-6">
+
+
+
+                    <div class="form-group validate">
+                        <label for="">localisation:</label>
+                        <input type="text" name="localisation" id="localisation" class="form-control" required {% block value-localisation %}{% endblock value-localisation %}>
+                        <small class="text-red text-muted mySpan "></small>
+                    </div>
+
+
+                    <div class="form-group validate">
+                        <label for="">categorie</label>
+                        <select name="categorie" id="categorie" class="form-control">
+                            {% for categorie in categories %}
+                            <option value="categorie.id">
+                                {{categorie.nom_categorie}}
+                            </option>
+                            {% endfor %}
+    
+    
+    
+                        </select> 
+    
+                            <small class="text-red text-muted mySpan "></small>
+                        </div>
+                   
+                    <!-- col md -->
+                </div>
+                    <!-- row -->
+
+                </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-sm btn-secondary" data-dismiss="modal">
+                            <i class="ace-icon fa fa-times"></i>
+                            Cancel
+                        </button>
+
+                        <button class="btn btn-sm btn-primary">
+                            {% block btn-action %}<i class="ace-icon fa fa-check">save</i>{% endblock btn-action %}
+
+                        </button>
+
+
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
