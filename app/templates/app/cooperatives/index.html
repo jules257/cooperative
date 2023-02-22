@@ -1,0 +1,138 @@
+{% extends 'app/layouts/default.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0"></h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">cooperative</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+
+
+
+
+    <!-- <div class="card"> -->
+        <div class="card-header">
+            {% if has_perm %}
+            <button type="button" class="btn btn-info" onclick="reset()" data-toggle="modal"
+                data-target="#modal-create">
+                <span class="fas fa-plus"></span>
+            </button>
+           {% include 'app/cooperatives/create.html' %}
+            {% endif %}
+
+
+
+
+        </div>
+        <!-- /.card-header -->
+        <form action="" method="get">
+            {% csrf_token %}
+          {{myfilters.form}}
+          
+            <input class="" type="submit" value="filter">
+        </form>
+
+        <div class="card-body">
+            <table id="table" class="table table-bordered table-hover ">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">nom cooperative</th>
+                        <th scope="col">adresse</th>
+                        <th scope="col">localisation</th>
+                        <th scope="col">categorie</th>
+                     
+
+                        <th scope="col">action</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    {% for cooperative in cooperatives %}
+                    <tr class="record">
+                        <td>{{cooperative.id}}</td>
+                        <td>{{cooperative.nom_cooperative}}</td>
+                        <td>{{cooperative.adresse}}</td>
+                        <td>{{cooperative.localisation}}</td>
+                        <td>{{cooperative.categorie.nom_categorie}}</td>
+                        
+
+
+                        <td>
+                            {% if has_perm %}
+                            <a href="" class="link-edit mr-2 text-primary" data-toggle="modal"
+                                data-target="#modal-edit{{cooperative.pk}}">
+
+
+
+                                <span class="fas fa-edit"></span>
+
+                            </a>
+                            {% endif %}
+                            {% if has_perm %}
+                            <a class="link-edit mr-2 text-danger" onclick="return confirm('do you want to delete!!' )"
+                                href="{% url 'cooperatives_delete' cooperative.id %}">
+                                <span class="fas fa-trash"></span>
+
+                            </a>
+                            {% endif %}
+                        </td>
+
+                    </tr>
+                    <!-- include modal edit -->
+                   {% include 'app/cooperatives/edit.html' %}
+
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+
+    </div>
+    <!-- /.card -->
+
+
+
+
+
+
+    {% for message in messages %}
+
+    {% if message.tags == 'success' %}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        var m = "{{ message }}";
+        swal("perfect !", m, "success")
+    </script>
+    {% endif %}
+    {% endfor %}
+
+
+
+    <!-- fin content-wrapp -->
+</div>
+
+
+
+
+
+
+
+{% endblock %}
