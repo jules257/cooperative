@@ -7,7 +7,7 @@ class Cooperative(models.Model):
     nom_cooperative = models.CharField(max_length=45)
     adresse = models.CharField(max_length=45)
     localisation = models.CharField(max_length=45)
-    membre = models.ManyToManyField('Membre' ,blank = True)
+   
     
     
   
