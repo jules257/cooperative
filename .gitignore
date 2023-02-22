@@ -5,3 +5,4 @@ cooperative/__pycache__/
 app/views/__pycache__/
 app/models/__pycache__/
 app/forms/__pycache__/
+app/filters/__pycache__/
