@@ -1,0 +1,1 @@
+from .cooperative_filter import CooperativeFilter
