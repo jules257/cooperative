@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from app.views import home,categories,users
+from app.views import home,categories,cooperatives,users
 
 
 
@@ -16,11 +16,22 @@ urlpatterns = [
     
     
     
+    path('cooperatives/',cooperatives.index, name='cooperatives_index'),
+    path('cooperatives/store',cooperatives.store, name='cooperatives_store'),
+    path('cooperatives/delete/<int:id>',cooperatives.delete, name='cooperatives_delete'),
+    path('cooperatives/update',cooperatives.update, name='cooperatives_update'),
+    path('cooperatives/edit/<int:id>',cooperatives.edit, name='cooperatives_edit'),
+    
+    
+    
     path('users/', users.index, name='users_index'),
     path('login/', users.user_login, name='users_login'),
     path('register/', users.register, name='users_register'),
     path('users/store', users.store, name='users_store'),
     path('logout/', users.user_logout, name='logout'),
+    
+    
+
     
    
     
