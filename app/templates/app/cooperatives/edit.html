@@ -1,0 +1,41 @@
+{% extends 'app/cooperatives/create.html' %}
+{% load crispy_forms_tags %}
+<!-- modal-id -->
+{% block modal-id %} id="modal-edit{{cooperative.pk}}" {% endblock modal-id %}
+<!-- form action -->
+{% block action %} action="{% url 'cooperatives_update' %}" {% endblock action %}
+<!-- bouton action -->
+{% block btn-action %}<i class="ace-icon fa fa-check">update</i>{% endblock btn-action %}
+<!-- all input -->
+{% block value-id %}
+
+<input type="" name="id" id="id" class="form-control" value="{{ cooperative.id }}" readonly>
+
+{% endblock value-id %}
+
+{% block value-nom_cooperative %}
+
+value="{{ cooperative.nom_cooperative }}"
+
+{% endblock value-nom_cooperative %}
+
+
+{% block value-adresse %}
+
+value="{{ cooperative.adresse }}"
+
+{% endblock value-adresse %}
+
+
+{% block value-localisation %}
+
+value="{{ cooperative.localisation }}"
+
+{% endblock value-localisation %}
+
+
+{% block value-categorie %}
+
+value="{{cooperative.categorie.nom_categorie}}"
+
+{% endblock value-categorie %}
